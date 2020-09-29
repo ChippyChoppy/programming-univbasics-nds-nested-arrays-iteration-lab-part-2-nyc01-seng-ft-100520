@@ -9,9 +9,12 @@ def find_min_in_nested_arrays(src)
     min_value = src[row_index][0]
     while element < src[row_index].count do
        binding.pry
-        min_array<< src[row_index][element] < min_value
+      if src[row_index][element] < min_value
+        min_value = src[row_index][element]
+      end 
       element += 1 
     end
+    min_array<< min_value
     row_index += 1 
   end
   min_array
